@@ -21,7 +21,7 @@ typedef enum {
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Film : NSObject {
-    BOOL *nominated;
+    BOOL nominated;
 }
 
 @property (nonatomic) FilmRating filmRating;

@@ -32,14 +32,17 @@
 
 - (void)setData:(NSArray *)films1 {
     films = films1;
-    [tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(view);
-        make.right.mas_equalTo(view);
-        make.top.mas_equalTo(view);
-        make.bottom.mas_equalTo(view);
-    }];
-
-    [tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(view);
+            make.right.mas_equalTo(view);
+            make.top.mas_equalTo(view);
+            make.bottom.mas_equalTo(view);
+        }];
+        
+        [tableView reloadData];
+    });
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

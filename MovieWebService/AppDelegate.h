@@ -11,10 +11,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (weak, nonatomic) UIWindow *window;
-@property (weak, nonatomic) IBOutlet UINavigationController *navigationController;
+@property (nullable, nonatomic, strong) UIWindow *window;
+@property (nullable, nonatomic, strong) UINavigationController *navigationController;
 
-- (void)getFilmWithCallback:(void (^)(Film *film))callback;
 
 @end
 

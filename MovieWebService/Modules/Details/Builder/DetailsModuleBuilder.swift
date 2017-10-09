@@ -12,6 +12,7 @@ import UIKit
 
     func build(with data: Any) -> UIViewController {
 
+        guard let film = data as? Film else { return UIViewController(); }
         let viewController = DetailsViewController()
 
         let router = DetailsRouter()
@@ -26,7 +27,7 @@ import UIKit
 
         presenter.interactor = interactor
         viewController.output = presenter
-        viewController.director = data as? Director
+        viewController.director = film.director 
 
         return viewController
     }

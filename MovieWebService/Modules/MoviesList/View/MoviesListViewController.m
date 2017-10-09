@@ -11,23 +11,26 @@
 #import "MoviesListViewOutput.h"
 #import "AppDelegate.h"
 #import "Film.h"
-
+#import "FilmDataProviderProtocol.h"
+#import "DummyDataProvider.h"
 @implementation MoviesListViewController
 
+id<FilmDataProviderProtocol> dataProvider; 
 #pragma mark - Life cycle
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
+    dataProvider = [DummyDataProvider new];
     [self.output didTriggerViewReadyEvent];
     [self.output setViewForSetup:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate getFilmWithCallback:^(Film *film) {
+    [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
         [self.output setData:film];
     }];
+
 
 }
 
