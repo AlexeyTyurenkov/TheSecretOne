@@ -13,6 +13,7 @@
 #import "MoviesListPresenter.h"
 #import "MoviesListRouter.h"
 
+
 @implementation MoviesListBuilder
 
 @synthesize router;
@@ -21,13 +22,15 @@
 - (UIViewController *)build {
     
     MoviesListViewController *viewController = [MoviesListViewController new];
-    presenter.view = viewController;
-
+    presenter.userInterface = viewController;
+    
+    
     MoviesListInteractor *interactor = [MoviesListInteractor new];
     interactor.delegate = presenter;
+    presenter.userInterface = viewController;
     presenter.interactor = interactor;
     viewController.delegate = presenter;
-    
+    viewController.dataSource = presenter;
     return viewController;
 
 }

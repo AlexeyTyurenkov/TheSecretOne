@@ -1,5 +1,5 @@
 //
-//  MoviesListViewInput.h
+//  MoviesListViewProtocol.h
 //  MovieWebService
 //
 //  Created by testDev on 11/04/2017.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@protocol MoviesListViewInput <NSObject>
-
+@protocol MoviesListViewProtocol <NSObject>
+- (void)update;
 - (void)setupInitialState;
-
 @end

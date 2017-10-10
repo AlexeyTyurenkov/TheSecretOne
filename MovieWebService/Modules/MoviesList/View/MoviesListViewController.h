@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MoviesListViewInput.h"
 #import "Film.h"
+#import "MoviesListDataSource.h"
+#import "MoviesListViewProtocol.h"
 
+@protocol MoviesListViewProtocol;
 @protocol MoviesListViewDelegate;
 
-@interface MoviesListViewController : UIViewController <MoviesListViewInput>
+@interface MoviesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MoviesListViewProtocol>
 
-@property (nonatomic, strong) id<MoviesListViewDelegate> delegate;
+@property (nonatomic, weak) id<MoviesListViewDelegate> delegate;
+@property (nonatomic, weak) id<MoviesListDataSource> dataSource;
 
 @end

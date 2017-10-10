@@ -13,7 +13,6 @@
 @protocol MoviesListViewDelegate <NSObject>
 
 - (void)didTriggerViewReadyEvent;
-- (void)setViewForSetup:(UIView *)view;
-- (void)setData:(Film *)film;
+
 
 @end

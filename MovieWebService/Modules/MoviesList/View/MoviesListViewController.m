@@ -7,18 +7,22 @@
 //
 
 #import "MoviesListViewController.h"
-
 #import "MoviesListViewDelegate.h"
 #import "AppDelegate.h"
 #import "Film.h"
-#import "FilmDataProviderProtocol.h"
-#import "DummyDataProvider.h"
+#import "CellTableCellViewModel.h"
+#import "Masonry.h"
+#import "MovieWebService-Swift.h"
+
 
 @interface MoviesListViewController ()
 {
-    id<FilmDataProviderProtocol> dataProvider;
+    UITableView* _tableView;
+    CellTableCellViewModel* viewModel;
+    NSString* regularCellIdentifier;
 }
 @end
+
 
 
 
@@ -28,20 +32,30 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
-    dataProvider = [DummyDataProvider new];
+    [self setViewForSetup];
     [self.delegate didTriggerViewReadyEvent];
-    [self.delegate setViewForSetup:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    __weak MoviesListViewController* weakSelf = self;
-    [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
-        [weakSelf.delegate setData:film];
+}
+
+
+- (void)setViewForSetup {
+    _tableView = [UITableView new];
+    [self.view addSubview:_tableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = 44;
+    viewModel = [CellTableCellViewModel new];
+    regularCellIdentifier = [CellTableViewCell cellIdentifierIn:_tableView];
+    [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view);
     }];
-
-
 }
 
 #pragma mark - MoviesListViewInput
@@ -49,6 +63,44 @@
 - (void)setupInitialState {
     self.navigationItem.title = @"RootViewController";
     self.view.backgroundColor = [UIColor whiteColor];
+}
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:regularCellIdentifier];
+    if (cell == nil) {
+        cell = (CellTableViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:regularCellIdentifier];
+        
+    }
+    [viewModel configure:cell withModel:[self.dataSource itemAt:indexPath.row]];
+    return cell;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataSource count];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+//    Film *film = [films objectAtIndex:indexPath.row];
+//    //DetailsModuleBuilder *builder = [DetailsModuleBuilder new];
+//    [self.delegate showdetails:film];
+}
+
+
+
+
+- (void)update
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableView reloadData];
+    });
 }
 
 @end

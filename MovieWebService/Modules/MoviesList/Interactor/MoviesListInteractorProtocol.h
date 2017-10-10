@@ -1,18 +1,17 @@
 //
-//  MoviesListRealInteractor.h
+//  MoviesListInteractorProtocol.h
 //  MovieWebService
 //
 //  Created by Oleksii Tiurenkov on 10/10/17.
 //  Copyright © 2017 TestCompany. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "MoviesListInteractorProtocol.h"
+#import "MoviesListInteractorDelegate.h"
 
-
-@interface MoviesListInteractor : NSObject <MoviesListInteractorProtocol>
+@protocol MoviesListInteractorProtocol <NSObject>
 
 @property (nonatomic, weak) id<MoviesListInteractorDelegate> delegate;
 - (void)getData;
+
 
 @end

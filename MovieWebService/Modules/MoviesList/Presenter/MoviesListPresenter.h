@@ -9,15 +9,15 @@
 #import "MoviesListViewDelegate.h"
 #import "MoviesListInteractorDelegate.h"
 #import "MoviesListModuleInput.h"
+#import "MoviesListDataSource.h"
+#import "MoviesListViewProtocol.h"
+#import "MoviesListRouterInput.h"
+#import "MoviesListInteractorProtocol.h"
 
-@protocol MoviesListViewInput;
-@protocol MoviesListViewProtocol;
-@protocol MoviesListRouterInput;
+@interface MoviesListPresenter : NSObject <MoviesListDataSource, MoviesListInteractorDelegate, MoviesListViewDelegate>
 
-@interface MoviesListPresenter : NSObject <MoviesListModuleInput, MoviesListViewDelegate, MoviesListInteractorDelegate>
-
-@property (nonatomic, strong) id<MoviesListViewInput> view;
-@property (nonatomic, strong) id<MoviesListViewProtocol> interactor;
+@property (nonatomic, strong) id<MoviesListViewProtocol> userInterface;
 @property (nonatomic, strong) id<MoviesListRouterInput> router;
+@property (nonatomic, strong) id<MoviesListInteractorProtocol> interactor;
 
 @end

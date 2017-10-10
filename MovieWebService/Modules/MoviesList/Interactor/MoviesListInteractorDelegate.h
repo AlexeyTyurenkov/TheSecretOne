@@ -12,4 +12,7 @@
 
 - (void)showdetails:(Film*)film;
 
+- (void)showFilm:(Film*)film;
+
+
 @end
