@@ -49,4 +49,9 @@
 
 #pragma mark - MoviesListRouterInput
 
+-(void)showDetail:(Film *)film
+{
+    //TODO: 
+}
+
 @end

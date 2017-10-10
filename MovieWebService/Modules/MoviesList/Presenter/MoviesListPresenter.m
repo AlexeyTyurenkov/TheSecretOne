@@ -32,19 +32,20 @@
     [self.interactor getData];
 }
 
+- (void)didTappedRow:(NSInteger)index
+{
+    Film* film = films[index];
+    [self.router showDetail:film];
+}
 
-
+#pragma mark -
 - (void)showFilm:(Film *)film
 {
     films = [NSArray arrayWithObject:film];
     [self.userInterface update];
 }
 
-- (void)showdetails:(Film *)film
-{
-    
-}
-
+#pragma mark -
 -(NSUInteger)count
 {
     return [films count];
@@ -56,6 +57,5 @@
 }
 
 
-#pragma mark - Методы MoviesListInteractorOutput
 
 @end

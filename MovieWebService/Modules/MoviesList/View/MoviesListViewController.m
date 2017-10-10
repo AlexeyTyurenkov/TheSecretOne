@@ -24,8 +24,6 @@
 @end
 
 
-
-
 @implementation MoviesListViewController
 
 #pragma mark - Life cycle
@@ -66,7 +64,7 @@
 }
 
 
-
+#pragma mark - TableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:regularCellIdentifier];
@@ -84,13 +82,11 @@
     return [self.dataSource count];
 }
 
+#pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-//    Film *film = [films objectAtIndex:indexPath.row];
-//    //DetailsModuleBuilder *builder = [DetailsModuleBuilder new];
-//    [self.delegate showdetails:film];
+    [self.delegate didTappedRow:indexPath.row];
 }
 
 

@@ -13,6 +13,6 @@
 @protocol MoviesListViewDelegate <NSObject>
 
 - (void)didTriggerViewReadyEvent;
-
+- (void)didTappedRow:(NSInteger)index;
 
 @end
