@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Film.h"
+@protocol MoviesListInteractorDelegate <NSObject>
 
-@protocol MoviesListInteractorOutput <NSObject>
+- (void)showdetails:(Film*)film;
 
 @end

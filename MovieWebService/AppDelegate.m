@@ -7,22 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "MoviesListBuilder.h"
-#import "Film.h"
+#import "MoviesListRouter.h"
+#import "RouterProtocol.h"
 
 @interface AppDelegate ()
-
+{
+    id<RouterProtocol> router;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    MoviesListBuilder *firstBuilder = [MoviesListBuilder new];
-    UIViewController *viewController = [firstBuilder build];
-    self.navigationController = [UINavigationController new];
-    self.navigationController.viewControllers =[NSArray arrayWithObject: viewController];
-    self.window.rootViewController = self.navigationController;
+
+    router = [MoviesListRouter new];
+    [router startPresentationOnWindow:self.window];
     [self.window makeKeyAndVisible];
 
     return YES;

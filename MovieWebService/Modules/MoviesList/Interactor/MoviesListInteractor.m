@@ -8,35 +8,37 @@
 
 #import "MoviesListInteractor.h"
 
-#import "MoviesListInteractorOutput.h"
+#import "MoviesListInteractorDelegate.h"
 #import "Film.h"
 #import "Masonry.h"
 #import "AppDelegate.h"
 #import "MovieWebService-Swift.h"
-#import "CurrentCalendarDateFormatter.h"
-#import "FilmRatingFormatter.h"
+#import "CellTableCellViewModel.h"
 
 @implementation MoviesListInteractor {
-    UITableView *tableView;
+    UITableView *_tableView;
     NSArray *films;
     UIView *view;
     NSString* regularCellIdentifier;
-    CurrentCalendarDateFormatter* dateFormatter;
-    FilmRatingFormatter* reatingFormatter;
+    CellTableCellViewModel* viewModel;
 }
 
 - (void)setViewForSetup:(UIView *)view1 {
     view = view1;
-    tableView = [UITableView new];
-    [view addSubview:tableView];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    tableView.estimatedRowHeight = 44;
-    
-    regularCellIdentifier = [CellTableViewCell cellIdentifierIn:tableView];
-    dateFormatter = [CurrentCalendarDateFormatter new];
-    
+    _tableView = [UITableView new];
+    [view addSubview:_tableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = 44;
+    viewModel = [CellTableCellViewModel new];
+    regularCellIdentifier = [CellTableViewCell cellIdentifierIn:_tableView];
+    [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(view);
+        make.right.mas_equalTo(view);
+        make.top.mas_equalTo(view);
+        make.bottom.mas_equalTo(view);
+    }];
 }
 
 #pragma mark - MoviesListInteractorInput
@@ -44,14 +46,7 @@
 - (void)setData:(NSArray *)films1 {
     films = films1;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(view);
-            make.right.mas_equalTo(view);
-            make.top.mas_equalTo(view);
-            make.bottom.mas_equalTo(view);
-        }];
-        
-        [tableView reloadData];
+        [_tableView reloadData];
     });
     
 }
@@ -61,27 +56,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"CellTableViewCell";
-    CellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:regularCellIdentifier];
     if (cell == nil) {
-        cell = (CellTableViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = (CellTableViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:regularCellIdentifier];
 
     }
     Film *film = [films objectAtIndex:indexPath.row];
-    cell.name.text = film.name;
-    cell.date.text = [dateFormatter stringFromDate:film.releaseDate];
-    cell.filmRating.text = [reatingFormatter ratingStringFor:film.filmRating];
-    cell.rating.text = [[NSNumber numberWithInteger:film.rating] stringValue];
-
+    [viewModel configure:cell withModel:film];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     Film *film = [films objectAtIndex:indexPath.row];
     DetailsModuleBuilder *builder = [DetailsModuleBuilder new];
-    [appDelegate.navigationController pushViewController:[builder buildWith:film] animated:YES];
+    [self.delegate showdetails:film];
 }
 
 @end

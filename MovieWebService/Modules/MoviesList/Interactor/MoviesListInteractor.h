@@ -9,11 +9,10 @@
 #import "MoviesListInteractorInput.h"
 #import "CellTableViewCell.h"
 
-@protocol MoviesListInteractorOutput;
+@protocol MoviesListInteractorDelegate;
 
-@interface MoviesListInteractor : NSObject <MoviesListInteractorInput, UITableViewDataSource, UITableViewDelegate>
+@interface MoviesListInteractor : NSObject <MoviesListViewProtocol, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id<MoviesListInteractorOutput> output;
-@property (nonatomic, strong) IBOutlet CellTableViewCell *movieCell;
+@property (nonatomic, weak) id<MoviesListInteractorDelegate> delegate;
 
 @end

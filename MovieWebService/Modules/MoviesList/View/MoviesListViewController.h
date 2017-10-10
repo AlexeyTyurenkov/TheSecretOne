@@ -11,10 +11,10 @@
 #import "MoviesListViewInput.h"
 #import "Film.h"
 
-@protocol MoviesListViewOutput;
+@protocol MoviesListViewDelegate;
 
 @interface MoviesListViewController : UIViewController <MoviesListViewInput>
 
-@property (nonatomic, strong) id<MoviesListViewOutput> output;
+@property (nonatomic, strong) id<MoviesListViewDelegate> delegate;
 
 @end

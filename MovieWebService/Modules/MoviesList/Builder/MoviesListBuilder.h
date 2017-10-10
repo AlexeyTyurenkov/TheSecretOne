@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RouterProtocol.h"
+#import "MoviesListPresenter.h"
 
 @interface MoviesListBuilder: NSObject
+
+@property (nonatomic, weak) id<RouterProtocol> router;
+@property (nonatomic, weak) MoviesListPresenter* presenter;
+
+
 - (UIViewController *)build;
 
 @end

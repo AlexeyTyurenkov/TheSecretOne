@@ -15,21 +15,18 @@
 
 @implementation MoviesListBuilder
 
+@synthesize router;
+@synthesize presenter;
+
 - (UIViewController *)build {
     
     MoviesListViewController *viewController = [MoviesListViewController new];
-
-    MoviesListRouter *router = [MoviesListRouter new];
-    router.viewController = viewController;
-
-    MoviesListPresenter *presenter = [MoviesListPresenter new];
     presenter.view = viewController;
-    presenter.router = router;
 
     MoviesListInteractor *interactor = [MoviesListInteractor new];
-    interactor.output = presenter;
+    interactor.delegate = presenter;
     presenter.interactor = interactor;
-    viewController.output = presenter;
+    viewController.delegate = presenter;
     
     return viewController;
 

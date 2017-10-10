@@ -48,6 +48,7 @@
 		C60BEC161F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC151F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m */; };
 		C60BEC1E1F8CF78300D23E04 /* FilmRatingFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC1D1F8CF78300D23E04 /* FilmRatingFormatter.m */; };
 		C60BEC201F8CF82E00D23E04 /* FilmRatingFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */; };
+		C60BEC231F8D00DE00D23E04 /* CellTableCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC221F8D00DE00D23E04 /* CellTableCellViewModel.m */; };
 		C7DB85D5B1453F3151459F19 /* DetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D852298DA083746EF65D02 /* DetailsViewOutput.swift */; };
 		D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEC664098EA97453E0ECBD /* DetailsPresenterTests.swift */; };
 		D97D69981F8CA86C00896EAF /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D698C1F8CA84300896EAF /* libOCMock.a */; };
@@ -151,7 +152,7 @@
 		A04472FFCF6FDE683F18F480 /* Pods-MovieWebServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebServiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebServiceTests/Pods-MovieWebServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9CE2FAEE24F90800F730771 /* Pods_MovieWebServiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWebServiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6A3D5C79D0DBE63886184F /* DetailsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
-		AB1C005B9ECA1191CC422287 /* MoviesListViewOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListViewOutput.h; sourceTree = "<group>"; };
+		AB1C005B9ECA1191CC422287 /* MoviesListViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListViewDelegate.h; sourceTree = "<group>"; };
 		AE97EE66EF21E50BD94AF4F3 /* MoviesListRouterInput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListRouterInput.h; sourceTree = "<group>"; };
 		B3557D257DDF9A08CB978484 /* Pods-MovieWebServiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebServiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebServiceUITests/Pods-MovieWebServiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B69330EE0906E0C552986611 /* Pods-MovieWebServiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebServiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebServiceUITests/Pods-MovieWebServiceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,10 +165,13 @@
 		C60BEC1C1F8CF78300D23E04 /* FilmRatingFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilmRatingFormatter.h; path = "Supporting Files/FilmRatingFormatter.h"; sourceTree = "<group>"; };
 		C60BEC1D1F8CF78300D23E04 /* FilmRatingFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmRatingFormatter.m; path = "Supporting Files/FilmRatingFormatter.m"; sourceTree = "<group>"; };
 		C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmRatingFormatter.m; path = MovieWebServiceTests/ModulesTests/Models/FilmRatingFormatter.m; sourceTree = SOURCE_ROOT; };
+		C60BEC211F8D00DE00D23E04 /* CellTableCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTableCellViewModel.h; path = Cells/CellTableCellViewModel.h; sourceTree = "<group>"; };
+		C60BEC221F8D00DE00D23E04 /* CellTableCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTableCellViewModel.m; path = Cells/CellTableCellViewModel.m; sourceTree = "<group>"; };
+		C60BEC241F8D095A00D23E04 /* RouterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterProtocol.h; sourceTree = "<group>"; };
 		C9D8F91432561B228237B2CE /* MoviesListRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListRouter.m; sourceTree = "<group>"; };
 		D0694EA765A10A05BD4473FE /* DetailsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsInteractorInput.swift; sourceTree = "<group>"; };
 		D39CE7C8FB3C38D6D501CE54 /* DetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListInteractorOutput.h; sourceTree = "<group>"; };
+		D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListInteractorDelegate.h; sourceTree = "<group>"; };
 		D97D698C1F8CA84300896EAF /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		D97D698E1F8CA84300896EAF /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		D97D698F1F8CA84300896EAF /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
@@ -268,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				67F84FB8D7ECA82C8CB0611A /* MoviesListInteractorInput.h */,
-				D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorOutput.h */,
+				D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorDelegate.h */,
 				6AEA4F937573C25C75CE2E0A /* MoviesListInteractor.h */,
 				F04B81BB8E069391AC58935D /* MoviesListInteractor.m */,
 			);
@@ -335,6 +339,7 @@
 			children = (
 				7CC08BD7D2E111BC41031D83 /* MoviesList */,
 				234438248B3AC7425AAD32D6 /* Details */,
+				C60BEC241F8D095A00D23E04 /* RouterProtocol.h */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -440,6 +445,8 @@
 				742C642A1E9C89E000B8E327 /* CellTableViewCell.h */,
 				742C642B1E9C89E000B8E327 /* CellTableViewCell.m */,
 				742C642C1E9C89E000B8E327 /* CellTableViewCell.xib */,
+				C60BEC211F8D00DE00D23E04 /* CellTableCellViewModel.h */,
+				C60BEC221F8D00DE00D23E04 /* CellTableCellViewModel.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -619,7 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				05A4B1832935E3B822D3EBA2 /* MoviesListViewInput.h */,
-				AB1C005B9ECA1191CC422287 /* MoviesListViewOutput.h */,
+				AB1C005B9ECA1191CC422287 /* MoviesListViewDelegate.h */,
 				F604268277E96743D1053B4E /* MoviesListViewController.h */,
 				4921FCC65F429A0DF58F70D4 /* MoviesListViewController.m */,
 			);
@@ -945,6 +952,7 @@
 				742C64381E9C913200B8E327 /* GenericRole.m in Sources */,
 				742C642D1E9C89E000B8E327 /* CellTableViewCell.m in Sources */,
 				742C63EA1E9C750600B8E327 /* main.m in Sources */,
+				C60BEC231F8D00DE00D23E04 /* CellTableCellViewModel.m in Sources */,
 				742C64321E9C901A00B8E327 /* Film.m in Sources */,
 				0F821A4287C29BEC9B54E253 /* MoviesListViewController.m in Sources */,
 				638D8069B664F59F50DFA783 /* MoviesListPresenter.m in Sources */,

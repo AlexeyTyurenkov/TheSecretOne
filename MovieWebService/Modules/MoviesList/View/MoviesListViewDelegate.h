@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Film.h"
 
-@protocol MoviesListViewOutput <NSObject>
+@protocol MoviesListViewDelegate <NSObject>
 
 - (void)didTriggerViewReadyEvent;
 - (void)setViewForSetup:(UIView *)view;

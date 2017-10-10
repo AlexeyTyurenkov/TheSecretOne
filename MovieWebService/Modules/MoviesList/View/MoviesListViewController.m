@@ -8,7 +8,7 @@
 
 #import "MoviesListViewController.h"
 
-#import "MoviesListViewOutput.h"
+#import "MoviesListViewDelegate.h"
 #import "AppDelegate.h"
 #import "Film.h"
 #import "FilmDataProviderProtocol.h"
@@ -30,15 +30,15 @@
 	[super viewDidLoad];
 
     dataProvider = [DummyDataProvider new];
-    [self.output didTriggerViewReadyEvent];
-    [self.output setViewForSetup:self.view];
+    [self.delegate didTriggerViewReadyEvent];
+    [self.delegate setViewForSetup:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     __weak MoviesListViewController* weakSelf = self;
     [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
-        [weakSelf.output setData:film];
+        [weakSelf.delegate setData:film];
     }];
 
 
