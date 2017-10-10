@@ -44,9 +44,9 @@
 		BC4A6E017108906463B7D6EF /* MoviesListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F04B81BB8E069391AC58935D /* MoviesListInteractor.m */; };
 		C7DB85D5B1453F3151459F19 /* DetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D852298DA083746EF65D02 /* DetailsViewOutput.swift */; };
 		D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEC664098EA97453E0ECBD /* DetailsPresenterTests.swift */; };
+		D97D69981F8CA86C00896EAF /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D698C1F8CA84300896EAF /* libOCMock.a */; };
 		D99279AF1F8C1D4300DC4E76 /* DummyFilmProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AE1F8C1D4300DC4E76 /* DummyFilmProvider.m */; };
 		D99279B01F8C1F4100DC4E76 /* DummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AB1F8C1B7A00DC4E76 /* DummyDataProvider.m */; };
-		D99279B41F8C218200DC4E76 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99279B21F8C20E900DC4E76 /* OCMock.framework */; };
 		D99279B51F8C264E00DC4E76 /* DummyFilmProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AE1F8C1D4300DC4E76 /* DummyFilmProvider.m */; };
 		D99279B61F8C26C700DC4E76 /* DummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AB1F8C1B7A00DC4E76 /* DummyDataProvider.m */; };
 		D99279B71F8C283200DC4E76 /* DummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AB1F8C1B7A00DC4E76 /* DummyDataProvider.m */; };
@@ -153,12 +153,22 @@
 		D0694EA765A10A05BD4473FE /* DetailsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsInteractorInput.swift; sourceTree = "<group>"; };
 		D39CE7C8FB3C38D6D501CE54 /* DetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListInteractorOutput.h; sourceTree = "<group>"; };
+		D97D698C1F8CA84300896EAF /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		D97D698E1F8CA84300896EAF /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		D97D698F1F8CA84300896EAF /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		D97D69901F8CA84300896EAF /* OCMConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		D97D69911F8CA84300896EAF /* OCMFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMFunctions.h; sourceTree = "<group>"; };
+		D97D69921F8CA84300896EAF /* OCMLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		D97D69931F8CA84300896EAF /* OCMMacroState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		D97D69941F8CA84300896EAF /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		D97D69951F8CA84300896EAF /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		D97D69961F8CA84300896EAF /* OCMRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		D97D69971F8CA84300896EAF /* OCMStubRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
 		D99279A51F8C095300DC4E76 /* Movie-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Movie-Bridging-Header.h"; path = "Supporting Files/Movie-Bridging-Header.h"; sourceTree = "<group>"; };
 		D99279AA1F8C1B7A00DC4E76 /* DummyDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyDataProvider.h; sourceTree = "<group>"; };
 		D99279AB1F8C1B7A00DC4E76 /* DummyDataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyDataProvider.m; sourceTree = "<group>"; };
 		D99279AC1F8C1BAA00DC4E76 /* FilmDataProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilmDataProviderProtocol.h; sourceTree = "<group>"; };
 		D99279AE1F8C1D4300DC4E76 /* DummyFilmProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyFilmProvider.m; sourceTree = "<group>"; };
-		D99279B21F8C20E900DC4E76 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = MovieWebService/Frameworks/OCMock.framework; sourceTree = "<group>"; };
 		D99279C01F8C2CA900DC4E76 /* DirectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectorTests.m; sourceTree = "<group>"; };
 		DF2595CF7BC69741655A3A5D /* MoviesListPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListPresenter.m; sourceTree = "<group>"; };
 		EE9B955A840DCAA8F533B7A8 /* DetailsViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewTests.swift; sourceTree = "<group>"; };
@@ -182,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99279B41F8C218200DC4E76 /* OCMock.framework in Frameworks */,
+				D97D69981F8CA86C00896EAF /* libOCMock.a in Frameworks */,
 				98DCD8E1A77375C8D2741246 /* Pods_MovieWebServiceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				742C64021E9C750700B8E327 /* MovieWebServiceTests.m */,
+				D97D698B1F8CA84300896EAF /* Library */,
 				742C64041E9C750700B8E327 /* Info.plist */,
 				3AD4387689456E863A555DEF /* ModulesTests */,
 			);
@@ -470,7 +481,6 @@
 		87C92900E3A5247180F01ADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D99279B21F8C20E900DC4E76 /* OCMock.framework */,
 				43D5E7435EFF0197EE769D38 /* Pods_MovieWebService.framework */,
 				570604DAB816B8F590CE6A19 /* Pods_MovieWebServiceTests.framework */,
 				A9CE2FAEE24F90800F730771 /* Pods_MovieWebServiceUITests.framework */,
@@ -526,6 +536,32 @@
 				DF2595CF7BC69741655A3A5D /* MoviesListPresenter.m */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D97D698B1F8CA84300896EAF /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D97D698C1F8CA84300896EAF /* libOCMock.a */,
+				D97D698D1F8CA84300896EAF /* OCMock */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		D97D698D1F8CA84300896EAF /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				D97D698E1F8CA84300896EAF /* NSNotificationCenter+OCMAdditions.h */,
+				D97D698F1F8CA84300896EAF /* OCMArg.h */,
+				D97D69901F8CA84300896EAF /* OCMConstraint.h */,
+				D97D69911F8CA84300896EAF /* OCMFunctions.h */,
+				D97D69921F8CA84300896EAF /* OCMLocation.h */,
+				D97D69931F8CA84300896EAF /* OCMMacroState.h */,
+				D97D69941F8CA84300896EAF /* OCMock.h */,
+				D97D69951F8CA84300896EAF /* OCMockObject.h */,
+				D97D69961F8CA84300896EAF /* OCMRecorder.h */,
+				D97D69971F8CA84300896EAF /* OCMStubRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		D99279A91F8C1B7A00DC4E76 /* Models */ = {
@@ -1117,6 +1153,10 @@
 				);
 				INFOPLIST_FILE = MovieWebServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MovieWebServiceTests/Library",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1135,6 +1175,10 @@
 				);
 				INFOPLIST_FILE = MovieWebServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MovieWebServiceTests/Library",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
