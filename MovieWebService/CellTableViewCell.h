@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *filmRating;
 @property (strong, nonatomic) IBOutlet UILabel *rating;
 
++ (NSString*)cellIdentifierIn:(UITableView*) tableView;
+
 @end

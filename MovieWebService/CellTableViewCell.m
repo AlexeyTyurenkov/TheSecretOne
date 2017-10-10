@@ -21,4 +21,16 @@
     // Configure the view for the selected state
 }
 
++ (NSString*)cellIdentifier
+{
+    return @"CellTableViewCell";
+}
+
++ (NSString *)cellIdentifierIn:(UITableView *)tableView
+{
+    UINib* cellNib = [UINib nibWithNibName:@"CellTableViewCell" bundle:nil];
+    [tableView registerNib:cellNib forCellReuseIdentifier:@"CellTableViewCell"];
+    return @"CellTableViewCell";
+}
+
 @end

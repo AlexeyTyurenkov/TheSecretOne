@@ -7,21 +7,17 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Film.h"
-#import "DummyDataProvider.h"
-#import "FilmDataProviderProtocol.h"
+#import "ModelIntegrationBaseClass.h"
 
-@interface DirectorTests : XCTestCase
+@interface DirectorTests : ModelIntegrationBaseClass
 
 @end
 
 @implementation DirectorTests
 
-id<FilmDataProviderProtocol> dataProvider;
 
 - (void)setUp {
     [super setUp];
-    dataProvider = [DummyDataProvider new];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -31,16 +27,14 @@ id<FilmDataProviderProtocol> dataProvider;
 }
 
 - (void)testDirectorParsing {
-    XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:@"DataProviderTesting"];
     
-    [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
+    [self loadFilmWithTestBlock:^(Film *film) {
         Director* director = film.director;
         XCTAssertNotNil(director,"Director cannot be nil");
         XCTAssertNotNil(director.film,"Director's film cannot be nil");
         XCTAssertNotNil(director.film.cast,"Director's film cast cannot be nil");
-        [expectation fulfill];
     }];
-    [self waitForExpectations:@[expectation] timeout:10];
+
 }
 
 @end

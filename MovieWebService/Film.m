@@ -10,7 +10,10 @@
 #import "Actor.h"
 #import "Director.h"
 
-@implementation Film
+@implementation Film {
+    NSString* _name;
+}
+
 
 
 - (id)initWithData:(NSDictionary *)data {
@@ -25,25 +28,29 @@
         self.director = [[Director alloc] initWithData:[data objectForKey:@"director"]];
         self.director.film = self;
         NSMutableArray *castsList = [NSMutableArray new];
-        NSArray *castsData = [data objectForKey:@"casts"];
+        NSArray *castsData = [data objectForKey:@"cast"];
         for (NSDictionary *castData in castsData) {
             Actor *actor = [[Actor alloc] initWithData:castData];
             actor.film = self;
             [castsList addObject:actor];
         }
-        self.cast = castsList;
-        
-        //[castsList removeAllObjects];
+        self.cast = [castsList copy];
     }
     return self;
 }
 
 
-- (void)setName:(NSString *)name {
-    if (name != _name) {
-        name = _name;
+- (void)setName:(NSString *)newName {
+    if (newName != _name) {
+        _name = newName;
     }
 }
+
+- (NSString *)name
+{
+    return _name;
+}
+
 
 - (void)setNominated:(BOOL)nominate;
 {

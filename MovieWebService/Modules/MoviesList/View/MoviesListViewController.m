@@ -13,9 +13,17 @@
 #import "Film.h"
 #import "FilmDataProviderProtocol.h"
 #import "DummyDataProvider.h"
+
+@interface MoviesListViewController ()
+{
+    id<FilmDataProviderProtocol> dataProvider;
+}
+@end
+
+
+
 @implementation MoviesListViewController
 
-id<FilmDataProviderProtocol> dataProvider; 
 #pragma mark - Life cycle
 
 - (void)viewDidLoad {
@@ -27,8 +35,10 @@ id<FilmDataProviderProtocol> dataProvider;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    __weak MoviesListViewController* weakSelf = self;
     [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
-        [self.output setData:film];
+        [weakSelf.output setData:film];
     }];
 
 

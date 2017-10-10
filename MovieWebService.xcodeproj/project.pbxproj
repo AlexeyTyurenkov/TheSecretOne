@@ -42,6 +42,12 @@
 		9E91D35C4F9A99DA2DA1B5BD /* DetailsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E8494DB90097392C92E80 /* DetailsModuleInput.swift */; };
 		B1ECDB0D319AC25FF7CDE7A3 /* MoviesListPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F90893C5DA4E92ACCFF053 /* MoviesListPresenterTests.m */; };
 		BC4A6E017108906463B7D6EF /* MoviesListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F04B81BB8E069391AC58935D /* MoviesListInteractor.m */; };
+		C60BEC0E1F8CDD9000D23E04 /* FilmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC0D1F8CDD9000D23E04 /* FilmTests.m */; };
+		C60BEC101F8CE05B00D23E04 /* ModelIntegrationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC0F1F8CE05B00D23E04 /* ModelIntegrationBaseClass.m */; };
+		C60BEC131F8CF32A00D23E04 /* TableCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC121F8CF32A00D23E04 /* TableCellTests.m */; };
+		C60BEC161F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC151F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m */; };
+		C60BEC1E1F8CF78300D23E04 /* FilmRatingFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC1D1F8CF78300D23E04 /* FilmRatingFormatter.m */; };
+		C60BEC201F8CF82E00D23E04 /* FilmRatingFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */; };
 		C7DB85D5B1453F3151459F19 /* DetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D852298DA083746EF65D02 /* DetailsViewOutput.swift */; };
 		D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEC664098EA97453E0ECBD /* DetailsPresenterTests.swift */; };
 		D97D69981F8CA86C00896EAF /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D698C1F8CA84300896EAF /* libOCMock.a */; };
@@ -149,6 +155,15 @@
 		AE97EE66EF21E50BD94AF4F3 /* MoviesListRouterInput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListRouterInput.h; sourceTree = "<group>"; };
 		B3557D257DDF9A08CB978484 /* Pods-MovieWebServiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebServiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebServiceUITests/Pods-MovieWebServiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B69330EE0906E0C552986611 /* Pods-MovieWebServiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebServiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebServiceUITests/Pods-MovieWebServiceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C60BEC0D1F8CDD9000D23E04 /* FilmTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmTests.m; path = MovieWebServiceTests/ModulesTests/Models/FilmTests.m; sourceTree = SOURCE_ROOT; };
+		C60BEC0F1F8CE05B00D23E04 /* ModelIntegrationBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelIntegrationBaseClass.m; sourceTree = "<group>"; };
+		C60BEC111F8CE3AB00D23E04 /* ModelIntegrationBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelIntegrationBaseClass.h; sourceTree = "<group>"; };
+		C60BEC121F8CF32A00D23E04 /* TableCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCellTests.m; path = MovieWebServiceTests/ModulesTests/TableCellTests.m; sourceTree = SOURCE_ROOT; };
+		C60BEC141F8CF4B800D23E04 /* CurrentCalendarDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentCalendarDateFormatter.h; path = "Supporting Files/CurrentCalendarDateFormatter.h"; sourceTree = "<group>"; };
+		C60BEC151F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentCalendarDateFormatter.m; path = "Supporting Files/CurrentCalendarDateFormatter.m"; sourceTree = "<group>"; };
+		C60BEC1C1F8CF78300D23E04 /* FilmRatingFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilmRatingFormatter.h; path = "Supporting Files/FilmRatingFormatter.h"; sourceTree = "<group>"; };
+		C60BEC1D1F8CF78300D23E04 /* FilmRatingFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmRatingFormatter.m; path = "Supporting Files/FilmRatingFormatter.m"; sourceTree = "<group>"; };
+		C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmRatingFormatter.m; path = MovieWebServiceTests/ModulesTests/Models/FilmRatingFormatter.m; sourceTree = SOURCE_ROOT; };
 		C9D8F91432561B228237B2CE /* MoviesListRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListRouter.m; sourceTree = "<group>"; };
 		D0694EA765A10A05BD4473FE /* DetailsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsInteractorInput.swift; sourceTree = "<group>"; };
 		D39CE7C8FB3C38D6D501CE54 /* DetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +342,8 @@
 		678D24AD174B438E4F11429D /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */,
+				C60BEC121F8CF32A00D23E04 /* TableCellTests.m */,
 				026F64ADDEE1970845506D2F /* DetailsInteractorTests.swift */,
 			);
 			path = Interactor;
@@ -380,6 +397,10 @@
 				742C643D1E9CCDB600B8E327 /* TappableLabel.h */,
 				742C643E1E9CCDB600B8E327 /* TappableLabel.m */,
 				742C63E91E9C750600B8E327 /* main.m */,
+				C60BEC141F8CF4B800D23E04 /* CurrentCalendarDateFormatter.h */,
+				C60BEC151F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m */,
+				C60BEC1C1F8CF78300D23E04 /* FilmRatingFormatter.h */,
+				C60BEC1D1F8CF78300D23E04 /* FilmRatingFormatter.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -578,7 +599,10 @@
 			isa = PBXGroup;
 			children = (
 				D99279AE1F8C1D4300DC4E76 /* DummyFilmProvider.m */,
+				C60BEC0D1F8CDD9000D23E04 /* FilmTests.m */,
 				D99279C01F8C2CA900DC4E76 /* DirectorTests.m */,
+				C60BEC0F1F8CE05B00D23E04 /* ModelIntegrationBaseClass.m */,
+				C60BEC111F8CE3AB00D23E04 /* ModelIntegrationBaseClass.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -790,7 +814,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		60D229F3C066BF91681F6B65 /* [CP] Check Pods Manifest.lock */ = {
@@ -808,7 +832,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8CD50BBF18C9F28C7E6F379B /* [CP] Embed Pods Frameworks */ = {
@@ -841,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C76D6B64988E41C2E41F3C90 /* [CP] Embed Pods Frameworks */ = {
@@ -934,11 +958,13 @@
 				9E91D35C4F9A99DA2DA1B5BD /* DetailsModuleInput.swift in Sources */,
 				3A1E161A2EB88942BBCBC76E /* DetailsPresenter.swift in Sources */,
 				3E5F7753DD2B76D8AB385033 /* DetailsInteractorInput.swift in Sources */,
+				C60BEC161F8CF4B800D23E04 /* CurrentCalendarDateFormatter.m in Sources */,
 				6597A49AD7CFA04B7C3014CF /* DetailsInteractorOutput.swift in Sources */,
 				5E41E215546810CF5B8975DB /* DetailsInteractor.swift in Sources */,
 				F40497951147EF1D67070FBE /* DetailsRouterInput.swift in Sources */,
 				90DA19CFA1BC8F9001F66546 /* DetailsRouter.swift in Sources */,
 				73275175EC7D920DC9231FA4 /* DetailsModuleBuilder.swift in Sources */,
+				C60BEC1E1F8CF78300D23E04 /* FilmRatingFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +974,7 @@
 			files = (
 				D99279B81F8C28C000DC4E76 /* Film.m in Sources */,
 				D99279BD1F8C28FF00DC4E76 /* Director.m in Sources */,
+				C60BEC201F8CF82E00D23E04 /* FilmRatingFormatter.m in Sources */,
 				D99279C11F8C2CA900DC4E76 /* DirectorTests.m in Sources */,
 				742C64031E9C750700B8E327 /* MovieWebServiceTests.m in Sources */,
 				D99279AF1F8C1D4300DC4E76 /* DummyFilmProvider.m in Sources */,
@@ -957,9 +984,12 @@
 				D99279BF1F8C291700DC4E76 /* GenericRole.m in Sources */,
 				1DA435E4F744A94268F376F0 /* MoviesListInteractorTests.m in Sources */,
 				EC2947B31729FA900482C447 /* MoviesListRouterTests.m in Sources */,
+				C60BEC0E1F8CDD9000D23E04 /* FilmTests.m in Sources */,
 				E2172FD11664F9A934E6AFB4 /* DetailsModuleBuilderTests.swift in Sources */,
 				D99279B61F8C26C700DC4E76 /* DummyDataProvider.m in Sources */,
+				C60BEC131F8CF32A00D23E04 /* TableCellTests.m in Sources */,
 				724C4C1CE4007A2FE908E02B /* DetailsViewTests.swift in Sources */,
+				C60BEC101F8CE05B00D23E04 /* ModelIntegrationBaseClass.m in Sources */,
 				9DD4F619A27419084F677EB0 /* DetailsInteractorTests.swift in Sources */,
 				D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */,
 				0BE549F9BEDE75E7D36554D2 /* DetailsRouterTests.swift in Sources */,

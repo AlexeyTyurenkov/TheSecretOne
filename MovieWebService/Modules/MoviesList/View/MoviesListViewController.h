@@ -13,9 +13,7 @@
 
 @protocol MoviesListViewOutput;
 
-@interface MoviesListViewController : UIViewController <MoviesListViewInput> {
-    Film *film;
-}
+@interface MoviesListViewController : UIViewController <MoviesListViewInput>
 
 @property (nonatomic, strong) id<MoviesListViewOutput> output;
 

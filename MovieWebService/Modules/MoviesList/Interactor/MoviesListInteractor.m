@@ -13,11 +13,16 @@
 #import "Masonry.h"
 #import "AppDelegate.h"
 #import "MovieWebService-Swift.h"
+#import "CurrentCalendarDateFormatter.h"
+#import "FilmRatingFormatter.h"
 
 @implementation MoviesListInteractor {
     UITableView *tableView;
     NSArray *films;
     UIView *view;
+    NSString* regularCellIdentifier;
+    CurrentCalendarDateFormatter* dateFormatter;
+    FilmRatingFormatter* reatingFormatter;
 }
 
 - (void)setViewForSetup:(UIView *)view1 {
@@ -26,6 +31,12 @@
     [view addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.estimatedRowHeight = 44;
+    
+    regularCellIdentifier = [CellTableViewCell cellIdentifierIn:tableView];
+    dateFormatter = [CurrentCalendarDateFormatter new];
+    
 }
 
 #pragma mark - MoviesListInteractorInput
@@ -53,35 +64,13 @@
     static NSString *CellIdentifier = @"CellTableViewCell";
     CellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"CellTableViewCell" owner:self options:nil] firstObject];
-        //cell = self.movieCell;
-        //self.movieCell = nil;
+        cell = (CellTableViewCell *) [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
     }
     Film *film = [films objectAtIndex:indexPath.row];
     cell.name.text = film.name;
-
-    NSCalendar* cal = [NSCalendar new];
-    NSString* dateText;
-    NSDateFormatter *f = [[NSDateFormatter alloc] init];
-    [f setCalendar:cal];
-    dateText = [f stringFromDate:film.releaseDate];
-
-    cell.date.text = dateText;
-
-    NSString *filmRatingText;
-    switch (film.filmRating) {
-        case G:
-            filmRatingText = @"G";
-        case PG:
-            filmRatingText = @"PG";
-        case PG13:
-            filmRatingText = @"PG13";
-        case R:
-            filmRatingText = @"R";
-        default:
-            break;
-    }
-    cell.filmRating.text = filmRatingText;
+    cell.date.text = [dateFormatter stringFromDate:film.releaseDate];
+    cell.filmRating.text = [reatingFormatter ratingStringFor:film.filmRating];
     cell.rating.text = [[NSNumber numberWithInteger:film.rating] stringValue];
 
     return cell;
