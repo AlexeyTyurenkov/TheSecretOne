@@ -21,8 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    router = [MoviesListRouter new];
-    [router startPresentationOnWindow:self.window];
+    router = [[MoviesListRouter alloc] initWithWindow:self.window andNavigationController:[UINavigationController new]];
+    self.window.rootViewController = [router initialController];
     [self.window makeKeyAndVisible];
 
     return YES;

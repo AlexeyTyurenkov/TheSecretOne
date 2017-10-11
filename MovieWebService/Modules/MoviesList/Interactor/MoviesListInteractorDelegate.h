@@ -10,6 +10,6 @@
 #import "Film.h"
 @protocol MoviesListInteractorDelegate <NSObject>
 
-- (void)showFilm:(Film*)film;
+- (void)showFilms:(NSArray<Film*>*)film;
 
 @end

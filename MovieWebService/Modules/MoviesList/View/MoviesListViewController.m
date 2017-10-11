@@ -8,11 +8,9 @@
 
 #import "MoviesListViewController.h"
 #import "MoviesListViewDelegate.h"
-#import "AppDelegate.h"
 #import "Film.h"
 #import "CellTableCellViewModel.h"
 #import "Masonry.h"
-#import "MovieWebService-Swift.h"
 
 
 @interface MoviesListViewController ()

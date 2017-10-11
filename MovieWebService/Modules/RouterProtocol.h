@@ -10,8 +10,9 @@
 
 @protocol RouterProtocol <NSObject>
 
-- (void)startPresentationOnWindow: (UIWindow*)presentationWindow;
 
+- (instancetype)initWithWindow:(UIWindow*)window andNavigationController: (UINavigationController*)navigationController;
+- (UIViewController*)initialController;
 
 @end
 

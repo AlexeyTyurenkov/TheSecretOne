@@ -33,7 +33,8 @@
 {
     __weak MoviesListInteractor* weakSelf = self;
     [dataProvider getFilmWithCallback:^(Film * _Nullable film) {
-        [weakSelf.delegate showFilm:film];
+        NSArray* films = [NSArray arrayWithObject:film];
+        [weakSelf.delegate showFilms:films];
     }];
 }
 

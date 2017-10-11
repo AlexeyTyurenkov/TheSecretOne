@@ -14,13 +14,13 @@ import UIKit
 
         guard let film = data as? Film else { return UIViewController(); }
         let viewController = DetailsViewController()
-
-        let router = DetailsRouter()
-        router.viewController = viewController
+//
+//        let router = DetailsRouter()
+//        router.viewController = viewController
 
         let presenter = DetailsPresenter()
         presenter.view = viewController
-        presenter.router = router
+       // presenter.router = router
 
         let interactor = DetailsInteractor()
         interactor.output = presenter

@@ -25,7 +25,7 @@
 - (void)configureModule {
  }
 
-#pragma mark - Методы MoviesListViewOutput
+#pragma mark - Методы MoviesListViewDelegate
 
 - (void)didTriggerViewReadyEvent {
 	[self.userInterface setupInitialState];
@@ -38,14 +38,14 @@
     [self.router showDetail:film];
 }
 
-#pragma mark -
-- (void)showFilm:(Film *)film
+#pragma mark - MoviesListInteractorDelegate
+- (void)showFilms:(NSArray<Film*> *)films
 {
-    films = [NSArray arrayWithObject:film];
+    self->films = films;
     [self.userInterface update];
 }
 
-#pragma mark -
+#pragma mark - MoviesListDataSource
 -(NSUInteger)count
 {
     return [films count];

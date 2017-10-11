@@ -6,6 +6,6 @@
 //  Copyright © 2017 Agoda Services Co. Ltd. All rights reserved.
 //
 
-protocol DetailsRouterInput {
-
+@objc protocol DetailsRouterInput {
+    func set(film:Film)
 }
