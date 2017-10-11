@@ -12,6 +12,10 @@
 
 - (id)initWithData:(NSDictionary *)data {
     self = [super init];
+    if (self)
+    {
+        self.name = data[@"name"];
+    }
     return self;
 }
 

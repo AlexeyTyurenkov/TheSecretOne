@@ -7,17 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RouterProtocol.h"
-#import "MoviesListPresenter.h"
+#import "ModuleBuilderProtocol.h"
 
-@interface MoviesListModuleBuilder: NSObject
+@interface MoviesListModuleBuilder: NSObject<ModuleBuilderProtocol>
 
-@property (weak, nonatomic) UIWindow* window;
-@property (weak, nonatomic) UINavigationController* navigat;
 
 
 - (UIViewController *)build;
-- (instancetype)initWithWindow:(UIWindow*)window andNavigationController:(UINavigationController *)navigationController;
 
 
 @end

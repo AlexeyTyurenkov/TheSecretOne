@@ -12,9 +12,9 @@
 #import "MovieWebService-Swift.h"
 #import "MoviesListViewController.h"
 
+
 @interface MoviesListRouter ()
 {
-    UIWindow* window;
     UINavigationController* navigationViewControler;
 }
 @end
@@ -25,11 +25,10 @@
 //@synthesize presenter;
 
 
-- (instancetype)initWithWindow:(UIWindow *)presentationWindow andNavigationController:(UINavigationController *)navigationController
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
 {
     self = [super init];
     if (self) {
-         window = presentationWindow;
         navigationViewControler = navigationController;
     }
     return self;
@@ -55,19 +54,19 @@
 
 -(void)showDetail:(Film *)film
 {
-//    id<RouterProtocol> nextRouter = [[DetailsRouter alloc] initWithWindow:window andNavigationController:navigationViewControler];
-//    [self injectFilm:film toDetailRouter:nextRouter];
-//    UIViewController* controller = [nextRouter initialController];
-//    [navigationViewControler pushViewController:controller animated:YES];
+    id<ModuleBuilderProtocol> builder = [DetailsModuleBuilder new];
+    [self injectFilm:film toDetailModuleBuilder:builder];
+    UIViewController* controller = [builder build];
+    [navigationViewControler pushViewController:controller animated:YES];
 }
 
 #pragma mark - inject dependencies
 
-- (void)injectFilm:(Film*) film toDetailRouter: (id<RouterProtocol>) router
+- (void)injectFilm:(Film*) film toDetailModuleBuilder: (id<ModuleBuilderProtocol>) router
 {
-    if ([router conformsToProtocol:@protocol(DetailsRouterInput)])
+    if ([router conformsToProtocol:@protocol(FilmsDetailBuilder)])
     {
-        id<DetailsRouterInput> detailRouter = (id<DetailsRouterInput>)router;
+        id<FilmsDetailBuilder> detailRouter = (id<FilmsDetailBuilder>)router;
         [detailRouter setWithFilm:film];
     }
 }

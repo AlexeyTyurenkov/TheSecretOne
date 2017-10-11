@@ -8,23 +8,25 @@
 
 @objc class DetailsRouter: NSObject, DetailsRouterInput, RouterProtocol {
 
-	weak var viewController: DetailsViewController!
-    private var film: Film?
-    private var builder = DetailsModuleBuilder()
-    private var window: UIWindow
     private var navigationController: UINavigationController
 	// MARK: - DetailsRouterInput
 
 	
-    required init!(window: UIWindow!, andNavigationController navigationController: UINavigationController!) {
-        self.window = window
+    required init!(navigationController: UINavigationController!) {
         self.navigationController = navigationController
     }
     
     
     func initialController(withPresenter presenter: PresenterProtocol) -> UIViewController
     {
-        return UIViewController()
+        let detailsViewController = DetailsViewController()
+        detailsViewController.presenter = presenter
+        detailsViewController.output = presenter as! DetailsViewOutput
+        if let presenter = presenter as? DetailsPresenter
+        {
+            presenter.view = detailsViewController
+        }
+        return detailsViewController
 
     }
     

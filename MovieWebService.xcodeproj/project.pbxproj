@@ -144,7 +144,6 @@
 		C60BEC1F1F8CF82E00D23E04 /* FilmRatingFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilmRatingFormatter.m; path = MovieWebServiceTests/ModulesTests/Models/FilmRatingFormatter.m; sourceTree = SOURCE_ROOT; };
 		C60BEC211F8D00DE00D23E04 /* CellTableCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTableCellViewModel.h; path = Cells/CellTableCellViewModel.h; sourceTree = "<group>"; };
 		C60BEC221F8D00DE00D23E04 /* CellTableCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTableCellViewModel.m; path = Cells/CellTableCellViewModel.m; sourceTree = "<group>"; };
-		C60BEC241F8D095A00D23E04 /* RouterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterProtocol.h; sourceTree = "<group>"; };
 		C60BEC251F8D153700D23E04 /* MoviesListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesListInteractor.h; sourceTree = "<group>"; };
 		C60BEC261F8D153700D23E04 /* MoviesListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesListInteractor.m; sourceTree = "<group>"; };
 		C60BEC281F8D203500D23E04 /* MoviesListDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesListDataSource.h; sourceTree = "<group>"; };
@@ -160,11 +159,11 @@
 		C60BEC371F8E0D5400D23E04 /* CellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellTableViewCell.m; path = Cells/CellTableViewCell.m; sourceTree = "<group>"; };
 		C60BEC381F8E0D5400D23E04 /* CellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellTableViewCell.h; path = Cells/CellTableViewCell.h; sourceTree = "<group>"; };
 		C60BEC391F8E0D5400D23E04 /* CellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellTableViewCell.xib; path = Cells/CellTableViewCell.xib; sourceTree = "<group>"; };
-		C60BEC3D1F8E0D7300D23E04 /* InteractorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractorProtocol.h; sourceTree = "<group>"; };
 		C60BEC3E1F8E0D7300D23E04 /* RouterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterProtocol.h; sourceTree = "<group>"; };
 		C60BEC3F1F8E0D9300D23E04 /* TappableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TappableLabel.h; path = Frameworks/TappableLabel.h; sourceTree = "<group>"; };
 		C60BEC401F8E0D9300D23E04 /* TappableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TappableLabel.m; path = Frameworks/TappableLabel.m; sourceTree = "<group>"; };
 		C60BEC421F8E0DE200D23E04 /* PresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresenterProtocol.h; sourceTree = "<group>"; };
+		C60BEC431F8E1CBB00D23E04 /* ModuleBuilderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleBuilderProtocol.h; sourceTree = "<group>"; };
 		C9D8F91432561B228237B2CE /* MoviesListRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListRouter.m; sourceTree = "<group>"; };
 		D0694EA765A10A05BD4473FE /* DetailsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsInteractorInput.swift; sourceTree = "<group>"; };
 		D39CE7C8FB3C38D6D501CE54 /* DetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -336,7 +335,6 @@
 			children = (
 				7CC08BD7D2E111BC41031D83 /* MoviesList */,
 				234438248B3AC7425AAD32D6 /* Details */,
-				C60BEC241F8D095A00D23E04 /* RouterProtocol.h */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -552,9 +550,9 @@
 		C60BEC3C1F8E0D7300D23E04 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C60BEC3D1F8E0D7300D23E04 /* InteractorProtocol.h */,
 				C60BEC3E1F8E0D7300D23E04 /* RouterProtocol.h */,
 				C60BEC421F8E0DE200D23E04 /* PresenterProtocol.h */,
+				C60BEC431F8E1CBB00D23E04 /* ModuleBuilderProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

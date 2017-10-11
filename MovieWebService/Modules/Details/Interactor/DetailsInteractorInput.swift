@@ -7,5 +7,5 @@
 //
 
 protocol DetailsInteractorInput {
-
+    func getFilm()-> Void
 }

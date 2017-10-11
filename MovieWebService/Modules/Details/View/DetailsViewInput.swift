@@ -7,5 +7,7 @@
 //
 
 protocol DetailsViewInput: class {
-
+    func showDirectorsName(name:String)
+    func show(actorName:String)
+    func show(screenName: String)
 }

@@ -8,4 +8,5 @@
 
 protocol DetailsInteractorOutput: class {
 
+    func show(film:Film)
 }

@@ -6,12 +6,16 @@
 //  Copyright © 2017 Agoda Services Co. Ltd. All rights reserved.
 //
 
-class DetailsInteractor: DetailsInteractorInput {
+class DetailsInteractor:DetailsInteractorInput {
+
+
 
     weak var output: DetailsInteractorOutput!
-
+    var film: Film! 
     // MARK: - DetailsInteractorInput
     
-    
+    func getFilm() -> Void {
+        output.show(film: film)
+    }
     
 }

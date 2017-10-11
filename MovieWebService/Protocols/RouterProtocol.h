@@ -13,7 +13,7 @@
 @protocol RouterProtocol <NSObject>
 
 
-- (instancetype)initWithWindow:(UIWindow*)window andNavigationController: (UINavigationController*)navigationController;
+- (instancetype)initWithNavigationController: (UINavigationController*)navigationController;
 - (UIViewController*)initialControllerWithPresenter:(id<PresenterProtocol>)presenter;
 
 @end

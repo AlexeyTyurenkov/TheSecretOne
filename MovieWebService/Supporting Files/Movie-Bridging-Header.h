@@ -4,3 +4,4 @@
 #import "TappableLabel.h"
 #import "RouterProtocol.h"
 #import "PresenterProtocol.h"
+#import "ModuleBuilderProtocol.h"

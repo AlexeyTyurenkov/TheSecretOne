@@ -25,17 +25,17 @@
 @synthesize router;
 
 
-- (instancetype)initWithWindow:(UIWindow*)window andNavigationController:(UINavigationController *)navigationController
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        router = [[MoviesListRouter alloc] initWithWindow:self.window andNavigationController:[UINavigationController new]];
     }
     return self;
 }
 
 - (UIViewController *)build {
     
+    router = [[MoviesListRouter alloc] initWithNavigationController:[UINavigationController new]];
     MoviesListPresenter* presenter = [MoviesListPresenter new];
     
     UIViewController* viewController = [router initialControllerWithPresenter:presenter];

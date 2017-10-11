@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    MoviesListModuleBuilder* firstModuleBuilder = [[MoviesListModuleBuilder alloc] initWithWindow:self.window andNavigationController:[UINavigationController new]];
+    id<ModuleBuilderProtocol> firstModuleBuilder = [MoviesListModuleBuilder new];
     self.window.rootViewController = [firstModuleBuilder build];
     [self.window makeKeyAndVisible];
 
