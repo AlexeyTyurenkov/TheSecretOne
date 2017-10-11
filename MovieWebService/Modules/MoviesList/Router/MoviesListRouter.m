@@ -8,42 +8,44 @@
 
 #import "MoviesListRouter.h"
 #import <UIKit/UIKit.h>
-#import "MoviesListBuilder.h"
 #import "MoviesListPresenter.h"
 #import "MovieWebService-Swift.h"
-
+#import "MoviesListViewController.h"
 
 @interface MoviesListRouter ()
 {
     UIWindow* window;
     UINavigationController* navigationViewControler;
-    MoviesListBuilder* builder;
-    MoviesListPresenter* presenter;
 }
 @end
 
 
 @implementation MoviesListRouter
 
+//@synthesize presenter;
+
+
 - (instancetype)initWithWindow:(UIWindow *)presentationWindow andNavigationController:(UINavigationController *)navigationController
 {
     self = [super init];
     if (self) {
-        builder = [MoviesListBuilder new];
          window = presentationWindow;
-        presenter = [MoviesListPresenter new];
         navigationViewControler = navigationController;
-        [presenter setRouter:self];
     }
     return self;
 }
 
 
-- (UIViewController *)initialController
+- (UIViewController *)initialControllerWithPresenter:(MoviesListPresenter*)presenter
 {
-    [builder setRouter:self];
-    [builder setPresenter:presenter];
-    UIViewController *viewController = [builder build];
+    presenter = presenter;
+    presenter.router = self;
+  
+    MoviesListViewController *viewController = [MoviesListViewController new];
+    viewController.delegate = presenter;
+    viewController.dataSource = presenter;
+    presenter.userInterface = viewController;
+
     [navigationViewControler setViewControllers:@[viewController]];
     return navigationViewControler;
 }
@@ -53,10 +55,10 @@
 
 -(void)showDetail:(Film *)film
 {
-    id<RouterProtocol> nextRouter = [[DetailsRouter alloc] initWithWindow:window andNavigationController:navigationViewControler];
-    [self injectFilm:film toDetailRouter:nextRouter];
-    UIViewController* controller = [nextRouter initialController];
-    [navigationViewControler pushViewController:controller animated:YES];
+//    id<RouterProtocol> nextRouter = [[DetailsRouter alloc] initWithWindow:window andNavigationController:navigationViewControler];
+//    [self injectFilm:film toDetailRouter:nextRouter];
+//    UIViewController* controller = [nextRouter initialController];
+//    [navigationViewControler pushViewController:controller animated:YES];
 }
 
 #pragma mark - inject dependencies

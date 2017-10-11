@@ -10,12 +10,14 @@
 #import "RouterProtocol.h"
 #import "MoviesListPresenter.h"
 
-@interface MoviesListBuilder: NSObject
+@interface MoviesListModuleBuilder: NSObject
 
-@property (nonatomic, weak) id<RouterProtocol> router;
-@property (nonatomic, weak) MoviesListPresenter* presenter;
+@property (weak, nonatomic) UIWindow* window;
+@property (weak, nonatomic) UINavigationController* navigat;
 
 
 - (UIViewController *)build;
+- (instancetype)initWithWindow:(UIWindow*)window andNavigationController:(UINavigationController *)navigationController;
+
 
 @end

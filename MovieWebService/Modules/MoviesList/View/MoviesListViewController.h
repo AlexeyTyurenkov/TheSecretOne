@@ -17,7 +17,7 @@
 
 @interface MoviesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MoviesListViewProtocol>
 
-@property (nonatomic, weak) id<MoviesListViewDelegate> delegate;
+@property (nonatomic, strong) id<MoviesListViewDelegate> delegate;
 @property (nonatomic, weak) id<MoviesListDataSource> dataSource;
 
 @end

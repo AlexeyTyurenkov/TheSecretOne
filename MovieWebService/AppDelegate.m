@@ -7,13 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "MoviesListRouter.h"
-#import "RouterProtocol.h"
+#import "MoviesListModuleBuilder.h"
 
 @interface AppDelegate ()
-{
-    id<RouterProtocol> router;
-}
+
 @end
 
 @implementation AppDelegate
@@ -21,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    router = [[MoviesListRouter alloc] initWithWindow:self.window andNavigationController:[UINavigationController new]];
-    self.window.rootViewController = [router initialController];
+    MoviesListModuleBuilder* firstModuleBuilder = [[MoviesListModuleBuilder alloc] initWithWindow:self.window andNavigationController:[UINavigationController new]];
+    self.window.rootViewController = [firstModuleBuilder build];
     [self.window makeKeyAndVisible];
 
     return YES;

@@ -9,10 +9,13 @@
 #import "MoviesListRouterInput.h"
 #import "RouterProtocol.h"
 
+
 @class UIViewController;
+@class MoviesListPresenter;
 
 @interface MoviesListRouter : NSObject <MoviesListRouterInput, RouterProtocol>
 
 @property (nonatomic, weak) UIViewController *viewController;
+//@property (nonatomic, strong)  MoviesListPresenter* presenter;
 
 @end

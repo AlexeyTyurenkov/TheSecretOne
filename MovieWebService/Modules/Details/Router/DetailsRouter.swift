@@ -14,17 +14,21 @@
     private var window: UIWindow
     private var navigationController: UINavigationController
 	// MARK: - DetailsRouterInput
-    func initialController() -> UIViewController! {
-        
-        
-        return UIViewController()
-    }
+
 	
     required init!(window: UIWindow!, andNavigationController navigationController: UINavigationController!) {
         self.window = window
         self.navigationController = navigationController
     }
     
+    
+    func initialController(withPresenter presenter: PresenterProtocol) -> UIViewController
+    {
+        return UIViewController()
+
+    }
+    
+    //MARK: - DetailsRouterProtocol
     func set(film: Film) {
         
     }

@@ -9,9 +9,10 @@
 #import "MoviesListPresenter.h"
 
 #import "MoviesListRouterInput.h"
+#import "RouterProtocol.h"
 
 @class MoviesListInteractor;
-
+@protocol RouterProtocol;
 
 
 @implementation MoviesListPresenter {
@@ -35,13 +36,13 @@
 - (void)didTappedRow:(NSInteger)index
 {
     Film* film = films[index];
-    [self.router showDetail:film];
+    [self.moviesListRouter showDetail:film];
 }
 
 #pragma mark - MoviesListInteractorDelegate
-- (void)showFilms:(NSArray<Film*> *)films
+- (void)showFilms:(NSArray<Film*> *)loadedFilms
 {
-    self->films = films;
+    films = loadedFilms;
     [self.userInterface update];
 }
 
@@ -56,6 +57,12 @@
     return films[index];
 }
 
-
+- (void)setRouter:(id<RouterProtocol>)router
+{
+    if ([router conformsToProtocol:@protocol(MoviesListRouterInput)])
+    {
+        self.moviesListRouter = (id<MoviesListRouterInput>)router;
+    }
+}
 
 @end
