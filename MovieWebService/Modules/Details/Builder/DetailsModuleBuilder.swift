@@ -8,8 +8,12 @@
 
 import UIKit
 
-@objc class DetailsModuleBuilder: NSObject {
+class DetailsModuleBuilder {
 
+    var router: DetailsRouterInput!
+    var interactor: DetailsInteractorInput!
+    
+    
     func build(with data: Any) -> UIViewController {
 
         guard let film = data as? Film else { return UIViewController(); }

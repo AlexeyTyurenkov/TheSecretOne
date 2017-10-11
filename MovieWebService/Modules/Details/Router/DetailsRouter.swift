@@ -10,11 +10,13 @@
 
 	weak var viewController: DetailsViewController!
     private var film: Film?
-    
+    private var builder = DetailsModuleBuilder()
     private var window: UIWindow
     private var navigationController: UINavigationController
 	// MARK: - DetailsRouterInput
     func initialController() -> UIViewController! {
+        
+        
         return UIViewController()
     }
 	
