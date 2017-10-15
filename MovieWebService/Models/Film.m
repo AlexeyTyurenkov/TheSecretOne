@@ -22,7 +22,7 @@
         self.filmRating = [[data objectForKey:@"filmRating"] doubleValue];
         self.languages = [data objectForKey:@"languages"];
         [self setNominated:[[data objectForKey:@"nominated"] boolValue]];
-        self.releaseDate = [NSDate dateWithTimeIntervalSince1970:[[data objectForKey:@"releaseDate"] doubleValue]];
+        self.releaseDate = [NSDate dateWithTimeIntervalSince1970:[[data objectForKey:@"releaseDate"] intValue]];
         self.name = [data objectForKey:@"name"];
         self.rating = [[data objectForKey:@"rating"] doubleValue];
         self.director = [[Director alloc] initWithData:[data objectForKey:@"director"]];

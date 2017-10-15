@@ -22,7 +22,7 @@ class DetailsPresenterTests: XCTestCase {
     override func setUp() {
         super.setUp()
 		
-        router = MockRouter()
+        router = MockRouter(navigationController: UINavigationController())
         interactor = MockInteractor()
         view = MockView()
 
@@ -41,17 +41,52 @@ class DetailsPresenterTests: XCTestCase {
         super.tearDown()
     }
 
+    
+    func testPresenter() {
+        
+    }
+    
+    
     // MARK: - Mock
 
     class MockInteractor: DetailsInteractorInput {
-
+        func getFilm()-> Void
+        {
+        
+        }
     }
 
-    class MockRouter: DetailsRouterInput {
+    class MockRouter: NSObject, DetailsRouterInput,RouterProtocol {
+        func set(film: Film) {
+            
+        }
+        
+        required init!(navigationController: UINavigationController!) {
+            
+        }
+        
+        func initialController(withPresenter presenter: PresenterProtocol!) -> UIViewController! {
+            return UIViewController()
+        }
+        
+     
+        
 
     }
 
     class MockView: DetailsViewInput {
+        func showDirectorsName(name: String) {
+            
+        }
+        
+        func show(actorName: String) {
+            
+        }
+        
+        func show(screenName: String) {
+            
+        }
+        
 		
     }
 

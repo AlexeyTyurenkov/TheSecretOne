@@ -25,8 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @property (nonatomic) FilmRating filmRating;
-@property (weak, nonatomic) NSArray *languages;
-@property (weak, nonatomic) NSDate *releaseDate;
+@property (strong, nonatomic) NSArray *languages;
+@property (strong, nonatomic) NSDate *releaseDate;
 @property (strong, nonatomic) NSArray<Actor*> *cast;
 
 - (id)initWithData:(NSDictionary *)data;

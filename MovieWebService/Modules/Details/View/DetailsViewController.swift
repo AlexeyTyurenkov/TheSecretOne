@@ -13,16 +13,16 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
 
 
     var output: DetailsViewOutput!
-    public var director: Director!
 
-    var directorName: UILabel!
-    var directorNameValue: UILabel!
+
     var tapToShowMore: TappableLabel!
-    var actorName: UILabel!
-    var actorScreenName: UILabel!
+    var directorView: LabelWithCaption!
+    var actorView: LabelWithCaption!
+    var actorScreenNameView: LabelWithCaption!
 
+    
     var presenter: PresenterProtocol!
-    // MARK: Life cycle
+    // MARK: - Life cycle
     
     override func viewDidLoad()
     {
@@ -32,67 +32,93 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
     }
 
     
+    
+    // MARK: - configure UI
     private func setupUI()
     {
         view = UIView()
         view.backgroundColor = .white
         
-        directorName = UILabel()
-        view.addSubview(directorName)
-        directorName.frame = CGRect(x: 20, y: 100, width: 200, height: 30)
-        directorName.text = "Director Name"
+        let presonViewHeight = 80
+        let afterDirectorPAdding:CGFloat = 30.0
+        let regularPadding:CGFloat = 20.0
+
+        let directorYPoint = 100
+        let leadingGuide = 20
+        let width = 200
         
-        directorNameValue = UILabel()
-        view.addSubview(directorNameValue)
-        directorNameValue.frame = CGRect(x: 20, y: 150, width: 200, height: 30)
-        
+        directorView = LabelWithCaption(frame:CGRect(x: leadingGuide, y: directorYPoint, width: width, height: presonViewHeight))
+        view.addSubview(directorView)
+
         tapToShowMore = TappableLabel()
         view.addSubview(tapToShowMore)
-        tapToShowMore.frame = CGRect(x: 20, y: 200, width: 200, height: 30)
+        tapToShowMore.frame = CGRect(x: leadingGuide, y: Int(directorView.frame.maxY + afterDirectorPAdding) , width: width, height: presonViewHeight)
         tapToShowMore.text = "Tap here to show more"
         tapToShowMore.delegate = self
         
-        actorName = UILabel()
-        view.addSubview(actorName)
-        actorName.frame = CGRect(x: 20, y: 240, width: 200, height: 30)
-        
-        actorScreenName = UILabel()
-        view.addSubview(actorScreenName)
-        actorScreenName.frame = CGRect(x: 20, y: 270, width: 200, height: 30)
-        actorName.isHidden = true
-        actorScreenName.isHidden = true
-    }
-    
-    
-    func set(film: Film)
-    {
-        let actor: Actor = director.film.cast.first!
-        actorName.text = actor.name;
-        actorScreenName.text = actor.screenName;
-    }
+        actorView = LabelWithCaption(frame:CGRect(x: leadingGuide, y: Int(directorView.frame.maxY + afterDirectorPAdding), width: width, height: presonViewHeight))
+        configureActorView()
+        view.addSubview(actorView)
 
+        actorScreenNameView = LabelWithCaption(frame:CGRect(x: leadingGuide, y: Int(actorView.frame.maxY + regularPadding), width: width, height: presonViewHeight))
+        configureActorScreen()
+        view.addSubview(actorScreenNameView)
+        
+
+        actorScreenNameView.isHidden = true
+        actorView.isHidden = true
+        
+    }
+    
+    private func configureNavigationBar()
+    {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+    }
+    
+    private func configureDirectorView(name: String)
+    {
+        directorView.set(caption: "Director Name", text: name)
+    }
+    
+    private func configureActorView(name: String = "")
+    {
+        actorView.set(caption: "Actor Name", text: name)
+    }
+    
+    private func configureActorScreen(name: String = "")
+    {
+        actorScreenNameView.set(caption: "Actor Screen Name", text: name)
+    }
+    
+    
+
+
+    
+    //MARK: - DetailsViewInput
+    
     func showDirectorsName(name: String) {
-        directorNameValue.text =  name
+        configureDirectorView(name: name)
     }
     
     func show(actorName:String)
     {
-        self.actorName.text = actorName;
-        self.actorName.isHidden = false
+        configureActorView(name: actorName)
+        actorView.isHidden = false
     }
     
     func show(screenName: String)
     {
-        actorScreenName.text = screenName
-        actorScreenName.isHidden = false
+        configureActorScreen(name: screenName)
+        actorScreenNameView.isHidden = false
+
     }
     
-    // MARK: DetailsViewInput
+    // MARK: - TappableLabelDelegate
 
     func didReceiveTouch() {
         
         output.didTapShowMore()
-        
+        tapToShowMore.isHidden = true
     }
 
 }

@@ -52,5 +52,8 @@ class DetailsViewTests: XCTestCase {
             viewIsReadyDidCall = true
         }
 		
+        func didTapShowMore() {
+            
+        }
     }
 }

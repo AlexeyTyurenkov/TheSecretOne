@@ -11,9 +11,8 @@
 
 #import "MoviesListPresenter.h"
 
-#import "MoviesListViewInput.h"
-#import "MoviesListInteractorInput.h"
-#import "MoviesListRouterInput.h"
+#import "MoviesListInteractorProtocol.h"
+#import "MoviesListViewProtocol.h"
 
 @interface MoviesListPresenterTests : XCTestCase
 
@@ -34,13 +33,13 @@
 
     self.presenter = [[MoviesListPresenter alloc] init];
 
-    self.mockInteractor = OCMProtocolMock(@protocol(MoviesListInteractorInput));
+    self.mockInteractor = OCMProtocolMock(@protocol(MoviesListInteractorProtocol));
     self.mockRouter = OCMProtocolMock(@protocol(MoviesListRouterInput));
-    self.mockView = OCMProtocolMock(@protocol(MoviesListViewInput));
+    self.mockView = OCMProtocolMock(@protocol(MoviesListViewProtocol));
 
     self.presenter.interactor = self.mockInteractor;
     self.presenter.router = self.mockRouter;
-    self.presenter.view = self.mockView;
+    self.presenter.userInterface = self.mockView;
 }
 
 - (void)tearDown {

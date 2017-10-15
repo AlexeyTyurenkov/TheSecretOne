@@ -22,7 +22,9 @@ class DetailsInteractorTests: XCTestCase {
         output = MockOutput()
        
         interactor = DetailsInteractor()
+        interactor.film = Film()
         interactor.output = output
+        
     }
 
     override func tearDown() {
@@ -32,10 +34,20 @@ class DetailsInteractorTests: XCTestCase {
         super.tearDown()
     }
 
+    
+    func testShowFilm() {
+        //TODO: check film
+        interactor.getFilm()
+        XCTAssertNotNil(output.film)
+    }
+    
     // MARK: - Mock
 
     class MockOutput: DetailsInteractorOutput {
-
+        var film: Film?
+        func show(film: Film) {
+            self.film = film
+        }
     }
 
 }

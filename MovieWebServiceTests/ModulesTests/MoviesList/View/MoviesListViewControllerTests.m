@@ -10,8 +10,7 @@
 #import <OCMock/OCMock.h>
 
 #import "MoviesListViewController.h"
-
-#import "MoviesListViewOutput.h"
+#import "MoviesListViewDelegate.h"
 
 @interface MoviesListViewControllerTests : XCTestCase
 
@@ -30,9 +29,9 @@
 
     self.controller = [[MoviesListViewController alloc] init];
 
-    self.mockOutput = OCMProtocolMock(@protocol(MoviesListViewOutput));
+    self.mockOutput = OCMProtocolMock(@protocol(MoviesListViewDelegate));
 
-    self.controller.output = self.mockOutput;
+    self.controller.delegate = self.mockOutput;
 }
 
 - (void)tearDown {

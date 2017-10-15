@@ -32,9 +32,6 @@ class DetailsModuleBuilderTests: XCTestCase {
 
         let interactor: DetailsInteractor = presenter.interactor as! DetailsInteractor
         XCTAssertNotNil(interactor.output)
-
-        let router: DetailsRouter = presenter.router as! DetailsRouter
-        XCTAssertNotNil(router.viewController)
     }
 
 }
