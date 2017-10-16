@@ -33,7 +33,7 @@
 
     self.presenter = [[MoviesListPresenter alloc] init];
 
-    self.mockInteractor = OCMProtocolMock(@protocol(MoviesListInteractorProtocol));
+    //self.mockInteractor = OCMProtocolMock(@protocol(MoviesListInteractorProtocol));
     self.mockRouter = OCMProtocolMock(@protocol(MoviesListRouterInput));
     self.mockView = OCMProtocolMock(@protocol(MoviesListViewProtocol));
 

@@ -11,6 +11,7 @@
 
 @interface TableCellTests : XCTestCase
 {
+    UITableView* tableView;
     CellTableViewCell* cell;
 }
 @end
@@ -19,6 +20,7 @@
 
 - (void)setUp {
     [super setUp];
+    tableView = [[UITableView alloc] init];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -27,6 +29,13 @@
     [super tearDown];
 }
 
-
+- (void)testCellIdentifier {
+    //Test class method
+    
+    NSString* identifier = [CellTableViewCell cellIdentifierForRegisteredCellIn:tableView];
+    XCTAssertTrue([identifier isEqualToString:@"CellTableViewCell"]);
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellTableViewCell"];
+    XCTAssertTrue([cell isKindOfClass:[CellTableViewCell class]]);
+}
 
 @end

@@ -29,9 +29,9 @@
 
     self.interactor = [[MoviesListInteractor alloc] init];
 
-    //self.mockOutput = OCMProtocolMock(@protocol(MoviesListInteractorOutput));
+    self.mockOutput = OCMProtocolMock(@protocol(MoviesListInteractorDelegate));
 
-    //self.interactor.output = self.mockOutput;
+    self.interactor.delegate = self.mockOutput;
 }
 
 - (void)tearDown {
@@ -42,6 +42,32 @@
     [super tearDown];
 }
 
-#pragma mark - Тестирование методов MoviesListInteractorInput
+#pragma mark - Тестирование методов MoviesListInteractorDelegate
+
+- (void)testGetData {
+    id mockDelegate = self.mockOutput;
+    [[mockDelegate expect] showFilms:[OCMArg any]];
+    [self.interactor getData];
+    [self waitForVerifiedMock:mockDelegate delay:10];
+}
+
+- (void)waitForVerifiedMock:(OCMockObject *)mock delay:(NSTimeInterval)delay
+{
+    NSTimeInterval i = 0;
+    while (i < delay)
+    {
+        @try
+        {
+            [mock verify];
+            return;
+        }
+        @catch (NSException *e) {}
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
+        i+=0.5;
+    }
+    [mock verify];
+}
+
+
 
 @end

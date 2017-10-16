@@ -1,3 +1,4 @@
+
 //
 //  MoviesListViewController.m
 //  MovieWebService
@@ -45,7 +46,7 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = 44;
     viewModel = [CellTableCellViewModel new];
-    regularCellIdentifier = [CellTableViewCell cellIdentifierIn:_tableView];
+    regularCellIdentifier = [CellTableViewCell cellIdentifierForRegisteredCellIn:_tableView];
     [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view);
         make.right.mas_equalTo(self.view);
@@ -57,7 +58,7 @@
 #pragma mark - MoviesListViewInput
 
 - (void)setupInitialState {
-    self.navigationItem.title = @"RootViewController";
+    self.navigationItem.title = @"Root View Controller";
     self.view.backgroundColor = [UIColor whiteColor];
 }
 

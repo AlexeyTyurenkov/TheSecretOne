@@ -52,6 +52,7 @@
 		C7DB85D5B1453F3151459F19 /* DetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D852298DA083746EF65D02 /* DetailsViewOutput.swift */; };
 		D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEC664098EA97453E0ECBD /* DetailsPresenterTests.swift */; };
 		D9755DF21F936D4C00E7864E /* LabelWithCaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9755DF11F936D4C00E7864E /* LabelWithCaption.swift */; };
+		D9755DF61F94A7F900E7864E /* CellTableViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9755DF51F94A7F900E7864E /* CellTableViewModelTests.m */; };
 		D97D69981F8CA86C00896EAF /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D698C1F8CA84300896EAF /* libOCMock.a */; };
 		D99279AF1F8C1D4300DC4E76 /* DummyFilmProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AE1F8C1D4300DC4E76 /* DummyFilmProvider.m */; };
 		D99279B01F8C1F4100DC4E76 /* DummyDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D99279AB1F8C1B7A00DC4E76 /* DummyDataProvider.m */; };
@@ -170,6 +171,7 @@
 		D39CE7C8FB3C38D6D501CE54 /* DetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D3E495E73D8E0AC15D5596F4 /* MoviesListInteractorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListInteractorDelegate.h; sourceTree = "<group>"; };
 		D9755DF11F936D4C00E7864E /* LabelWithCaption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithCaption.swift; sourceTree = "<group>"; };
+		D9755DF51F94A7F900E7864E /* CellTableViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellTableViewModelTests.m; sourceTree = "<group>"; };
 		D97D698C1F8CA84300896EAF /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		D97D698E1F8CA84300896EAF /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		D97D698F1F8CA84300896EAF /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				3136C6286E9E6EB633A264C1 /* MoviesListViewControllerTests.m */,
+				D9755DF51F94A7F900E7864E /* CellTableViewModelTests.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 				D99279B61F8C26C700DC4E76 /* DummyDataProvider.m in Sources */,
 				C60BEC131F8CF32A00D23E04 /* TableCellTests.m in Sources */,
 				724C4C1CE4007A2FE908E02B /* DetailsViewTests.swift in Sources */,
+				D9755DF61F94A7F900E7864E /* CellTableViewModelTests.m in Sources */,
 				C60BEC101F8CE05B00D23E04 /* ModelIntegrationBaseClass.m in Sources */,
 				9DD4F619A27419084F677EB0 /* DetailsInteractorTests.swift in Sources */,
 				D8BF340B1715D2CCC3DEB3B3 /* DetailsPresenterTests.swift in Sources */,
@@ -1190,6 +1194,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MovieWebServiceTests/Library",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

@@ -28,12 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSArray *languages;
 @property (strong, nonatomic) NSDate *releaseDate;
 @property (strong, nonatomic) NSArray<Actor*> *cast;
-
-- (id)initWithData:(NSDictionary *)data;
-
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) double rating;
 @property (nonatomic, strong) Director *director;
+
+- (id)initWithData:(NSDictionary *)data;
+
+
 
 @end
 

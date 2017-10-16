@@ -26,11 +26,11 @@
     return @"CellTableViewCell";
 }
 
-+ (NSString *)cellIdentifierIn:(UITableView *)tableView
++ (NSString *)cellIdentifierForRegisteredCellIn:(UITableView *)tableView
 {
     UINib* cellNib = [UINib nibWithNibName:@"CellTableViewCell" bundle:nil];
-    [tableView registerNib:cellNib forCellReuseIdentifier:@"CellTableViewCell"];
-    return @"CellTableViewCell";
+    [tableView registerNib:cellNib forCellReuseIdentifier:[self cellIdentifier]];
+    return [self cellIdentifier];
 }
 
 @end
